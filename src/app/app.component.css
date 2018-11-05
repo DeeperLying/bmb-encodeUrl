@@ -1,0 +1,117 @@
+#list {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(238, 238, 238, .8);
+}
+
+#list .block {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 2rem);
+  margin: 0 auto;
+  margin-top: 1rem;
+  overflow: hidden;
+}
+
+#list .block-top {
+  background-color: #783ea7;
+  display: flex;
+  padding: 1rem;
+  justify-content: space-between;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+#list .block:nth-child(2) .block-top {
+  background-color: #23ad5d;
+}
+
+#list .block:nth-child(3) .block-top {
+  background-color: #408fe7;
+}
+
+#list .block:nth-child(4) .block-top {
+  background-color: #d93942;
+}
+
+#list .avatar {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50px;
+}
+
+#list .avatar img {
+  width: 100%;
+  border-radius: 100%;
+}
+
+#list .version {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+
+#list .version b {
+  color: white;
+  font-size: 14px;
+}
+
+#list .version span {
+  color: rgba(238, 238, 238, 0.8);
+  text-align: center;
+}
+
+#list .block-bottom {
+  background-color: white;
+  height: 6rem;
+  padding: 1rem;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+#list .block-bottom h4 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+#list .block-bottom p {
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+#list .block-bottom span {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50px;
+  background-color: white;
+  top: -5px;
+  left: 5px;
+  box-shadow: 20px 0 0 white, 20px 0 0 white, 40px 0 0 white, 60px 0 0 white, 60px 0 0 white, 80px 0 0 white,
+  100px 0 0 white, 120px 0 0 white, 140px 0 0 white, 160px 0 0 white, 180px 0 0 white,200px 0 0 white, 220px 0 0 white,
+  240px 0 0 white, 260px 0 0 white, 280px 0 0 white, 300px 0 0 white, 320px 0 0 white, 340px 0 0 white, 360px 0 0 white,
+  380px 0 0 white, 400px 0 0 white, 420px 0 0 white, 440px 0 0 white, 460px 0 0 white, 480px 0 0 white, 500px 0 0 white,
+  520px 0 0 white, 540px 0 0 white;
+}
+
+#list .arrow {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: 2rem;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+#list .arrow img{
+  width: 100%;
+}
+
+
+

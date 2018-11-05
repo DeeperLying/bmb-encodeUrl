@@ -12,4 +12,9 @@ export class BmbListComponent implements OnInit {
   ngOnInit() {
   }
 
+  public routerLink ( ): void {
+    // 路由跳转
+    console.log('!');
+  }
+
 }

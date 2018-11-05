@@ -1,21 +1,29 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { BmbListComponent } from './bmb-list/bmb-list.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BmbNotFoundComponent } from './bmb-not-found/bmb-not-found.component';
+import { BmbEncodeUrlComponent } from './bmb-encode-url/bmb-encode-url.component';
+import { BmbHeaderComponent } from './bmb-header/bmb-header.component';
+import { BmbFooterComponent } from './bmb-footer/bmb-footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BmbListComponent,
-    BmbNotFoundComponent
+    BmbNotFoundComponent,
+    BmbEncodeUrlComponent,
+    BmbHeaderComponent,
+    BmbFooterComponent
   ],
   imports: [
     BrowserModule,
     RouterModule,
+    FormsModule,
     AppRoutingModule,
   ],
   providers: [],

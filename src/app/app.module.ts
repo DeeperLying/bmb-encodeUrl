@@ -1,9 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { ArrRoutingModule } from './/arr-routing.module';
 import { BmbListComponent } from './bmb-list/bmb-list.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { BmbListComponent } from './bmb-list/bmb-list.component';
   ],
   imports: [
     BrowserModule,
-    ArrRoutingModule
+    RouterModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

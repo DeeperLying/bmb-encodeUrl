@@ -1,0 +1,32 @@
+#head {
+  display: flex;
+  height: 4rem;
+  padding: 0 1rem;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  background-color: white;
+}
+
+#head .back {
+  height: 1.5rem;
+}
+
+#head .back img {
+  height: 100%;
+  transform: rotate(180deg);
+  vertical-align: top;
+}
+
+#head .e-mail {
+  height: 1.3rem;
+}
+
+#head .e-mail img {
+  height: 100%;
+  vertical-align: top;
+}

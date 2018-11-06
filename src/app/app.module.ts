@@ -10,6 +10,7 @@ import { BmbNotFoundComponent } from './bmb-not-found/bmb-not-found.component';
 import { BmbEncodeUrlComponent } from './bmb-encode-url/bmb-encode-url.component';
 import { BmbHeaderComponent } from './bmb-header/bmb-header.component';
 import { BmbFooterComponent } from './bmb-footer/bmb-footer.component';
+import { AppUtilModule } from './/app-util.module';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { BmbFooterComponent } from './bmb-footer/bmb-footer.component';
     RouterModule,
     FormsModule,
     AppRoutingModule,
+    AppUtilModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

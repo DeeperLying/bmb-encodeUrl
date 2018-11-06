@@ -1,3 +1,11 @@
-<p>
-  bmb-encode-url works!
-</p>
+<div id="encode-url" class="bmb-main" >
+  <div class="url" >
+    <div class="paste" >
+      <textarea rows="3" [(ngModel)]="href" placeholder="请输入或者粘贴要转换的URL地址如(http://*)" ></textarea>
+    </div>
+    <div class="copy" >
+      <textarea rows="3" [(ngModel)]="url" disabled="disabled" ></textarea>
+    </div>
+    <div class="btn" (click)="onCopy()" >转换并拷贝</div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+#encode-url .url {
+  padding: 0 15px;
+}
+
+#encode-url .paste textarea , #encode-url .copy textarea{
+  width: 100%;
+  resize: none;
+  margin-top: 1rem;
+  padding: .5rem 0.8rem;
+  color: #191919;
+  border-radius: 10px;
+  border: none;
+  line-height: 1.2;
+  font-size: 14px;
+}
+
+#encode-url .btn{
+  width: 100%;
+  padding: .8rem;
+  font-size: 16px;
+  color: white;
+  background-color: #23ad5d;
+  margin-top: 1rem;
+  border-right: 10px;
+}

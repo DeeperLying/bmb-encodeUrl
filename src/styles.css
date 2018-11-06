@@ -1,1 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+/* bmb-* 开头的都是公共样式 */
+
+
+.bmb-main {
+  position: absolute;
+  width: 100%;
+  height: calc(100% - 4rem);
+  background-color: rgba(238, 238, 238, .8);
+}

@@ -4,8 +4,8 @@
       <textarea rows="3" [(ngModel)]="href" placeholder="请输入或者粘贴要转换的URL地址如(http://*)" ></textarea>
     </div>
     <div class="copy" >
-      <textarea rows="3" [(ngModel)]="url" disabled="disabled" ></textarea>
+      <textarea id="foo" rows="3" [(ngModel)]="url" readonly="readonly" ></textarea>
     </div>
-    <div class="btn" (click)="onCopy()" >转换并拷贝</div>
+    <div class="btn" data-clipboard-target="#foo" (click)="onCopy()" >转换并拷贝</div>
   </div>
 </div>

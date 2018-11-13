@@ -14,7 +14,7 @@ export class BmbListComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log(this.localhost);
+    // console.log(this.localhost);
   }
 
 }

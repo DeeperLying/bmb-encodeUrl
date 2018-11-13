@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AppType } from '../app-util.module';
+import * as Clipboard from 'clipboard/dist/clipboard.js';
 
 @Component({
   selector: 'app-bmb-encode-url',
@@ -10,13 +10,15 @@ export class BmbEncodeUrlComponent implements OnInit {
   private obj: object;
   public  url: string;
   public  href: string;
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
+    this.clipboard();
   }
 
   public onCopy (): void {
     let str: string;
+    const wxParam: string[] = ['code', 'state', 'passport', 'v', 'from', 'isappinstalled'];
     if (!this.href) {
       return;
     }
@@ -31,14 +33,21 @@ export class BmbEncodeUrlComponent implements OnInit {
     } else {
       str  = this.href.substr(this.href.indexOf('#/') + 2);
     }
-    console.log(str);
     this.url     = 'https://www.snsports.cn/webapp/index.html?redirect=' + str;
     const route  = this.href.substr( this.href.indexOf('?'));
     const Params = this.getRequest(route);
     for (const obj in Params) {
+      for (let i = 0; i < wxParam.length; i++) {
+        if (obj === wxParam[i]) {
+          console.log(Params[obj] = 'undefined');
+          break;
+        }
+      }
       if ( Params[obj] !== 'undefined') {
         this.url += '&' + obj + '=' + Params[obj];
         console.log(this.url);
+      } else {
+        this.url += '&' + obj;
       }
     }
   }
@@ -54,6 +63,23 @@ export class BmbEncodeUrlComponent implements OnInit {
       }
     }
     return theRequest;
+  }
+
+  private clipboard (): void {
+    const clipboard = new Clipboard('.btn');
+    clipboard.on('success', function(e) {
+      console.log('Action:', e.action);
+      console.log('Text:', e.text);
+      console.log('Trigger:', e.trigger);
+      alert('复制成功');
+      e.clearSelection();
+    });
+
+    clipboard.on('error', function(e) {
+      console.error('Action:', e.action);
+      console.error('Trigger:', e.trigger);
+      alert('复制成功');
+    });
   }
 
 }

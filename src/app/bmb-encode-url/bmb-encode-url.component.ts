@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppType } from '../app-util.module';
 
 @Component({
   selector: 'app-bmb-encode-url',
@@ -6,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./bmb-encode-url.component.css']
 })
 export class BmbEncodeUrlComponent implements OnInit {
-  private obj : object;
+  private obj: object;
+  public  url: string;
   public  href: string;
-  public  url : string;
   constructor() { }
 
   ngOnInit() {
@@ -25,7 +26,7 @@ export class BmbEncodeUrlComponent implements OnInit {
       return;
     }
     const last = this.href.indexOf('?');
-    if (last != -1) {
+    if (last !== -1) {
        str = this.href.substring(this.href.indexOf('#/') + 2, last);
     } else {
       str  = this.href.substr(this.href.indexOf('#/') + 2);
@@ -35,26 +36,17 @@ export class BmbEncodeUrlComponent implements OnInit {
     const route  = this.href.substr( this.href.indexOf('?'));
     const Params = this.getRequest(route);
     for (const obj in Params) {
-      this.url += '&' + obj + '=' + Params[obj];
-    }
-    this.obj = document.querySelector('.copy').getElementsByTagName('textarea')[0];
-    // this.obj.select();
-    try {
-      if ( document.execCommand('copy', false, null)) {
-        document.execCommand( 'Copy ' );
-        alert('已复制好，可贴粘。');
-      } else {
-        alert('复制失败，请手动复制');
+      if ( Params[obj] !== 'undefined') {
+        this.url += '&' + obj + '=' + Params[obj];
+        console.log(this.url);
       }
-    } catch (err) {
-        alert('复制失败，请手动复制');
     }
   }
 
   private getRequest( href: string ): object {
     const url = href; // 获取url中"?"符后的字串
     const theRequest = new Object();
-    if (url.indexOf('?') != -1) {
+    if (url.indexOf('?') !== -1) {
       const str = url.substr(1);
       const strs = str.split('&');
       for (let i = 0; i < strs.length; i ++) {

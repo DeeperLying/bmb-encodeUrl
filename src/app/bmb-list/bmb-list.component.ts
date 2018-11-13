@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from "@angular/common";
+
 
 @Component({
   selector: 'app-bmb-list',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BmbListComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private localhost: Location,
+  ) { }
 
   ngOnInit() {
+    console.log(this.localhost);
   }
 
 }

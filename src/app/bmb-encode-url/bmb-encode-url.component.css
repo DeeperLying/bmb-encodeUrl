@@ -2,7 +2,7 @@
   padding: 0 15px;
 }
 
-#encode-url .paste textarea , #encode-url .copy textarea{
+#encode-url .paste textarea , #encode-url .copy textarea {
   width: 100%;
   resize: none;
   margin-top: 1rem;
@@ -14,7 +14,7 @@
   font-size: 14px;
 }
 
-#encode-url .btn{
+#encode-url .btn {
   width: 100%;
   padding: .8rem;
   font-size: 16px;
@@ -22,4 +22,75 @@
   background-color: #23ad5d;
   margin-top: 1rem;
   border-right: 10px;
+}
+
+#encode-url .parse {
+  padding: 0 15px;
+  margin-top: 15px;
+}
+
+#encode-url .parse-url {
+  display: flex;
+  justify-content: space-between;
+}
+
+#encode-url .parse-url-id {
+  width: calc(100% - 120px);
+}
+
+#encode-url .parse-url-id  input {
+  font-size: 14px;
+  height: 45px;
+  width: 100%;
+  text-indent: 10px;
+  border-radius: 10px;
+  border: none;
+}
+
+#encode-url .parse-url-select {
+  width: 110px;
+}
+
+#encode-url .parse-url-select button {
+  margin-top: 0;
+  border: none;
+  font-size: 14px;
+}
+
+#encode-url .parse-url-select button:focus {
+  box-shadow: none;
+}
+
+#encode-url .dropdown-width {
+  min-width: 0;
+  width: 100%;
+}
+
+#encode-url .line {
+  height: 10px;
+  background: url("/assets/images/line.png") center no-repeat;
+  background-size: 100%;
+  margin-top: 15px;
+}
+
+#encode-url .parse-btn {
+  width: 100%;
+  padding: .8rem;
+  font-size: 16px;
+  color: white;
+  background-color: #23ad5d;
+  margin-top: 1rem;
+  border-right: 10px;
+}
+
+#encode-url .parse textarea {
+  width: 100%;
+  resize: none;
+  margin-top: 1rem;
+  padding: .5rem 0.8rem;
+  color: #191919;
+  border-radius: 10px;
+  border: none;
+  line-height: 1.2;
+  font-size: 14px;
 }

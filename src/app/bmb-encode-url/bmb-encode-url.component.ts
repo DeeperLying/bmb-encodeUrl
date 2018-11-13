@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as Clipboard from 'clipboard/dist/clipboard.js';
+import PopperJs from 'popper.js';
+
 
 @Component({
   selector: 'app-bmb-encode-url',
@@ -10,6 +12,7 @@ export class BmbEncodeUrlComponent implements OnInit {
   private obj: object;
   public  url: string;
   public  href: string;
+  public  pares = '场馆/赛事';
   constructor() {}
 
   ngOnInit() {
@@ -39,11 +42,11 @@ export class BmbEncodeUrlComponent implements OnInit {
     for (const obj in Params) {
       for (let i = 0; i < wxParam.length; i++) {
         if (obj === wxParam[i]) {
-          console.log(Params[obj] = 'undefined');
+          console.log(Params[obj] = 'wxParams');
           break;
         }
       }
-      if ( Params[obj] !== 'undefined') {
+      if ( Params[obj] !== 'undefined' && Params[obj] !== 'wxParams') {
         this.url += '&' + obj + '=' + Params[obj];
         console.log(this.url);
       } else {
@@ -66,7 +69,7 @@ export class BmbEncodeUrlComponent implements OnInit {
   }
 
   private clipboard (): void {
-    const clipboard = new Clipboard('.btn');
+    const clipboard = new Clipboard('.copy-btn');
     clipboard.on('success', function(e) {
       console.log('Action:', e.action);
       console.log('Text:', e.text);

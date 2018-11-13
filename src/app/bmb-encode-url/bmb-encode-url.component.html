@@ -1,4 +1,5 @@
 <div id="encode-url" class="bmb-main" >
+
   <div class="url" >
     <div class="paste" >
       <textarea rows="3" [(ngModel)]="href" placeholder="请输入或者粘贴要转换的URL地址如(http://*)" ></textarea>
@@ -6,6 +7,28 @@
     <div class="copy" >
       <textarea id="foo" rows="3" [(ngModel)]="url" readonly="readonly" ></textarea>
     </div>
-    <div class="btn" data-clipboard-target="#foo" (click)="onCopy()" >转换并拷贝</div>
+    <div class="btn copy-btn" data-clipboard-target="#foo" (click)="onCopy()" >转换并拷贝</div>
   </div>
+  <div class="line" ></div>
+  <div class="parse" >
+    <div class="parse-url" >
+      <div class="parse-url-id" >
+        <input type="text" placeholder="请输入赛事或者场馆ID" >
+      </div>
+      <div class="parse-url-select" >
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{pares}}
+          </button>
+          <div class="dropdown-menu dropdown-width" aria-labelledby="dropdownMenuButton">
+            <a href="javascript:void(0)" (click)="pares = '场馆'" class="dropdown-item" >场馆</a>
+            <a href="javascript:void(0)" (click)="pares = '赛事'" class="dropdown-item" >赛事</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <textarea rows="3" [(ngModel)]="url" readonly="readonly" ></textarea>
+    <div class="parse-btn btn" >获取</div>
+  </div>
+
 </div>

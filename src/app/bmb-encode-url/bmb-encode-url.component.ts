@@ -21,7 +21,7 @@ export class BmbEncodeUrlComponent implements OnInit {
 
   public onCopy (): void {
     let str: string;
-    const wxParam: string[] = ['code', 'state', 'passport', 'v', 'from', 'isappinstalled'];
+    const wxParam: string[] = ['code', 'state', 'passport', 'v', 'from', 'isappinstalled', 'sharer'];
     if (!this.href) {
       return;
     }
@@ -39,14 +39,16 @@ export class BmbEncodeUrlComponent implements OnInit {
     this.url     = 'https://www.snsports.cn/webapp/index.html?redirect=' + str;
     const route  = this.href.substr( this.href.indexOf('?'));
     const Params = this.getRequest(route);
-    for (const obj in Params) {
-      for (let i = 0; i < wxParam.length; i++) {
-        if (obj === wxParam[i]) {
-          console.log(Params[obj] = 'wxParams');
-          break;
+    for (const obj in Params ) {
+      wxParam.map((value, index, array) => {
+        if (obj === value) {
+          delete Params[obj];
         }
-      }
-      if ( Params[obj] !== 'undefined' && Params[obj] !== 'wxParams') {
+      });
+    }
+    console.log(Params);
+    for (const obj in Params) {
+      if ( Params[obj] !== 'undefined') {
         this.url += '&' + obj + '=' + Params[obj];
         console.log(this.url);
       } else {

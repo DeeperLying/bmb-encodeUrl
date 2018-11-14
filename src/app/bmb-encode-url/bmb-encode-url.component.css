@@ -70,7 +70,7 @@
 
 #encode-url .line {
   height: 10px;
-  background: url("/assets/images/line.png") center no-repeat;
+  background: url("../../assets/images/line.png") center no-repeat;
   background-size: 100%;
   margin-top: 15px;
 }

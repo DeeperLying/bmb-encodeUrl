@@ -27,7 +27,11 @@ export class BmbEncodeUrlComponent implements OnInit {
     if (!this.href) {
       return;
     }
-    const startIndex: number = this.href.indexOf('www.snsports.cn/webapp/');
+    const startIndex: number = this.href.trim().indexOf('www.snsports.cn/webapp/');
+    if (!this.href.match(/main-?\w*.html\??[^#]*#\/([\w-]+)\?(.*)/i)) {
+      this.url = this.href;
+      return;
+    }
     if (startIndex <= -1) {
       console.log('格式错误');
       return;
@@ -41,6 +45,7 @@ export class BmbEncodeUrlComponent implements OnInit {
     this.url     = 'https://www.snsports.cn/webapp/index.html?redirect=' + str;
     const route  = this.href.substr( this.href.indexOf('?'));
     const Params = this.getRequest(route);
+    console.log(this.url, Params);
     for (const obj in Params ) {
       wxParam.map((value, index, array) => {
         if (obj === value) {
@@ -51,7 +56,6 @@ export class BmbEncodeUrlComponent implements OnInit {
     for (const obj in Params) {
       if ( Params[obj] !== 'undefined') {
         this.url += '&' + obj + '=' + Params[obj];
-        console.log(this.url);
       } else {
         this.url += '&' + obj;
       }

@@ -12,7 +12,9 @@ export class BmbEncodeUrlComponent implements OnInit {
   private obj: object;
   public  url: string;
   public  href: string;
-  public  pares = '场馆/赛事';
+  public  pares = {val: '场馆', id : 1};
+  public  parseId: number;
+  public  parseURL: string;
   constructor() {}
 
   ngOnInit() {
@@ -46,7 +48,6 @@ export class BmbEncodeUrlComponent implements OnInit {
         }
       });
     }
-    console.log(Params);
     for (const obj in Params) {
       if ( Params[obj] !== 'undefined') {
         this.url += '&' + obj + '=' + Params[obj];
@@ -85,6 +86,21 @@ export class BmbEncodeUrlComponent implements OnInit {
       console.error('Trigger:', e.trigger);
       alert('复制成功');
     });
+  }
+
+  private parseUlr(): void {
+    if ( !this.pares.id ) {
+      return;
+    }
+
+    if (this.pares.id === 1) {
+      console.log('场馆');
+      this.parseURL = 'https://www.snsports.cn/activity/venue/index.html?redirect=home&venueId=' + this.parseId;
+    } else if (this.pares.id === 2) {
+      console.log('赛事');
+      this.parseURL = 'https://www.snsports.cn/webapp/index.html?redirect=aggregation&unionId=' + this.parseId;
+    }
+
   }
 
 }

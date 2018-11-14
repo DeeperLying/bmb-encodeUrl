@@ -6,18 +6,19 @@
   width: 100%;
   resize: none;
   margin-top: 1rem;
-  padding: .5rem 0.8rem;
+  padding: .3rem 0.8rem;
   color: #191919;
   border-radius: 10px;
   border: none;
   line-height: 1.2;
-  font-size: 14px;
+  font-size: 12px;
+  height: 45px;
 }
 
 #encode-url .btn {
   width: 100%;
-  padding: .8rem;
-  font-size: 16px;
+  padding: .7rem;
+  font-size: 14px;
   color: white;
   background-color: #23ad5d;
   margin-top: 1rem;
@@ -35,11 +36,11 @@
 }
 
 #encode-url .parse-url-id {
-  width: calc(100% - 120px);
+  width: calc(100% - 90px);
 }
 
 #encode-url .parse-url-id  input {
-  font-size: 14px;
+  font-size: 12px;
   height: 45px;
   width: 100%;
   text-indent: 10px;
@@ -48,13 +49,14 @@
 }
 
 #encode-url .parse-url-select {
-  width: 110px;
+  width: 80px;
 }
 
 #encode-url .parse-url-select button {
   margin-top: 0;
   border: none;
   font-size: 14px;
+  height: 45px;
 }
 
 #encode-url .parse-url-select button:focus {
@@ -75,8 +77,8 @@
 
 #encode-url .parse-btn {
   width: 100%;
-  padding: .8rem;
-  font-size: 16px;
+  padding: .7rem;
+  font-size: 14px;
   color: white;
   background-color: #23ad5d;
   margin-top: 1rem;
@@ -93,4 +95,21 @@
   border: none;
   line-height: 1.2;
   font-size: 14px;
+}
+
+#encode-url .show-parse {
+  display: flex;
+  justify-content: space-between;
+}
+
+#encode-url .show-parse textarea {
+  width: calc(100% - 90px);
+}
+
+#encode-url .show-parse-btn {
+  width: 80px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

@@ -5,30 +5,42 @@
       <textarea rows="3" [(ngModel)]="href" placeholder="请输入或者粘贴要转换的URL地址如(http://*)" ></textarea>
     </div>
     <div class="copy" >
-      <textarea id="foo" rows="3" [(ngModel)]="url" readonly="readonly" ></textarea>
+     <div class="show-parse" >
+      <textarea id="foo" rows="1" [(ngModel)]="url" readonly="readonly" ></textarea>
+        <div class="show-parse-btn btn copy-btn" data-clipboard-target="#foo" >
+          <span>拷贝</span>
+        </div>
+     </div>
     </div>
-    <div class="btn copy-btn" data-clipboard-target="#foo" (click)="onCopy()" >转换并拷贝</div>
+    <div class="btn" (click)="onCopy()" >转换</div>
   </div>
   <div class="line" ></div>
   <div class="parse" >
     <div class="parse-url" >
       <div class="parse-url-id" >
-        <input type="text" placeholder="请输入赛事或者场馆ID" >
+        <input type="number" [(ngModel)]="parseId" placeholder="请输入赛事或者场馆ID" >
       </div>
       <div class="parse-url-select" >
         <div class="dropdown">
           <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            {{pares}}
+            {{pares.val}}
           </button>
           <div class="dropdown-menu dropdown-width" aria-labelledby="dropdownMenuButton">
-            <a href="javascript:void(0)" (click)="pares = '场馆'" class="dropdown-item" >场馆</a>
-            <a href="javascript:void(0)" (click)="pares = '赛事'" class="dropdown-item" >赛事</a>
+            <a href="javascript:void(0)" (click)="pares = {val: '场馆',id : 1}" class="dropdown-item" >场馆</a>
+            <a href="javascript:void(0)" (click)="pares = {val: '赛事',id : 2}" class="dropdown-item" >赛事</a>
           </div>
         </div>
       </div>
     </div>
-    <textarea rows="3" readonly="readonly" ></textarea>
-    <div class="parse-btn btn" >获取</div>
+    <div class="show-parse" >
+      <textarea rows="1" id="parseTextarea" readonly="readonly" >
+        {{parseURL}}
+      </textarea>
+      <div class="show-parse-btn btn copy-btn" data-clipboard-target="#parseTextarea" >
+        <span>拷贝</span>
+      </div>
+    </div>
+    <div class="parse-btn btn" (click)="parseUlr()" >获取</div>
   </div>
 
 </div>

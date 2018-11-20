@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+
 
 import { AppComponent } from './app.component';
 import { BmbListComponent } from './bmb-list/bmb-list.component';
@@ -10,7 +12,7 @@ import { BmbNotFoundComponent } from './bmb-not-found/bmb-not-found.component';
 import { BmbEncodeUrlComponent } from './bmb-encode-url/bmb-encode-url.component';
 import { BmbHeaderComponent } from './bmb-header/bmb-header.component';
 import { BmbFooterComponent } from './bmb-footer/bmb-footer.component';
-import { AppUtilModule } from './/app-util.module';
+import { AppUtilModule } from './app-util.module';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,7 @@ import { AppUtilModule } from './/app-util.module';
     AppRoutingModule,
     AppUtilModule,
   ],
-  providers: [],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

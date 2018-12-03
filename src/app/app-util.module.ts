@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-@NgModule({
+@NgModule({  // 这个地方不应该是一个模块 NgModule 而 应该是 一个服务
   imports: [
     CommonModule
   ],

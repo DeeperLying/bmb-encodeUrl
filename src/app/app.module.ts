@@ -13,6 +13,8 @@ import { BmbEncodeUrlComponent } from './bmb-encode-url/bmb-encode-url.component
 import { BmbHeaderComponent } from './bmb-header/bmb-header.component';
 import { BmbFooterComponent } from './bmb-footer/bmb-footer.component';
 import { AppUtilModule } from './app-util.module';
+import { HighlightDirective } from './highlight.directive';
+import { TextDecorationPipe, ImageSrc } from './text-decoration.pipe';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,10 @@ import { AppUtilModule } from './app-util.module';
     BmbNotFoundComponent,
     BmbEncodeUrlComponent,
     BmbHeaderComponent,
-    BmbFooterComponent
+    BmbFooterComponent,
+    HighlightDirective,
+    TextDecorationPipe,
+    ImageSrc
   ],
   imports: [
     BrowserModule,

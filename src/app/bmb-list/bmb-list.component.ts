@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 
-
 @Component({
   selector: 'app-bmb-list',
   templateUrl: './bmb-list.component.html',

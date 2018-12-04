@@ -1,7 +1,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'textDecoration'
+  name: 'textDecoration',
+  pure: false
 })
 export class TextDecorationPipe implements PipeTransform {
 
@@ -12,7 +13,8 @@ export class TextDecorationPipe implements PipeTransform {
 }
 
 @Pipe({
-  name: 'imageSrc'
+  name: 'imageSrc',
+  pure: false
 })
 export class ImageSrc implements PipeTransform {
 

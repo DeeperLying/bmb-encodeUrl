@@ -5,9 +5,14 @@ import { CommonModule } from '@angular/common';
   imports: [
     CommonModule
   ],
-  declarations: []
+  declarations: [],
+  providers: []
 })
 export class AppUtilModule {
+  constructor () {}
+}
+
+export class AppUtilModules {
   constructor () {}
 }
 

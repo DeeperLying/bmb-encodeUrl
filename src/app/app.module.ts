@@ -16,6 +16,7 @@ import { AppUtilModule } from './app-util.module';
 import { HighlightDirective } from './highlight.directive';
 import { TextDecorationPipe, ImageSrc } from './text-decoration.pipe';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +36,12 @@ import { TextDecorationPipe, ImageSrc } from './text-decoration.pipe';
     AppRoutingModule,
     AppUtilModule,
   ],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
+  exports: [
+
+  ],
+  providers: [
+    {provide: LocationStrategy, useClass: HashLocationStrategy},
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

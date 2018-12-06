@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 
 import { AppComponent } from './app.component';
@@ -34,6 +35,7 @@ import { TextDecorationPipe, ImageSrc } from './text-decoration.pipe';
     RouterModule,
     FormsModule,
     AppRoutingModule,
+    HttpClientModule,
     AppUtilModule,
   ],
   exports: [

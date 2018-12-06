@@ -8,12 +8,13 @@ import { CommonModule } from '@angular/common';
   declarations: [],
   providers: []
 })
+
 export class AppUtilModule {
   constructor () {}
 }
 
-export class AppUtilModules {
-  constructor () {}
+export function log() {
+  console.log('ev');
 }
 
 export const AppType = {
